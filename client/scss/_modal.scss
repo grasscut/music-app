@@ -1,5 +1,5 @@
 .modal {
-  background-color: $black08;
+  background-color: $black-08;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -19,6 +19,7 @@
   background-color: $white;
   position: relative;
   max-width: 690px;
+  min-width: 360px;
   box-sizing: border-box;
 
   &__title {

@@ -27,16 +27,19 @@ html, body, #musicAppRoot {
   }
 
   &__loginButton {
+    @include button;
+
     max-width: 250px;
     border-radius: 500px;
     padding: 20px 45px;
-
     font-size: 14px;
     font-weight: 600;
     color: $white;
     background-color: $green;
 
-    @include button;
+    &:hover {
+      background-color: $light-green;
+    }
   }
 
   &__tracksList {

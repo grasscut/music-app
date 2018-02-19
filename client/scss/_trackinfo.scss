@@ -13,6 +13,7 @@
 
   &__text {
     flex: 1 1 100%;
+    margin-bottom: 30px;
   }
 
   &__deleteButton {
@@ -21,9 +22,29 @@
     background-color: $white;
     color: $black;
     border: 2px solid $red;
-    padding: 10px 15px;
+    padding: 8px 18px;
     border-radius: 50px;
+    transition: background-color .2s ease-in-out;
     align-self: self-end;
     flex: 0 0 auto;
+
+    &:hover {
+      background-color: $sand;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .trackInfo {
+    flex-direction: column;
+
+    &__albumImage {
+      order: 1;
+    }
+  }
+
+  .trackDescription {
+    flex: 1 1 100%;
+    order: 2;
   }
 }

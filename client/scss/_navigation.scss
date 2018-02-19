@@ -5,7 +5,8 @@
   width: 100%;
   position: fixed;
   z-index: 1;
-  background-color: $black08;
+  background-color: $black-08;
+  cursor: default;
 
   &__title {
     color: $white;
