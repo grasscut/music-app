@@ -162,9 +162,10 @@ html, body, #musicAppRoot {
   height: 100%;
   width: 100%;
   font-family: Circular,Helvetica,Arial,sans-serif;
-  letter-spacing: 2px;
-  background-color: #191414;
-  background: linear-gradient(180deg, #191414, white); }
+  letter-spacing: 2px; }
+  html > *, body > *, #musicAppRoot > * {
+    background: linear-gradient(180deg, #191414, white);
+    background-color: #191414; }
 
 .musicApp {
   min-height: 100%; }

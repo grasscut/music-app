@@ -14,8 +14,11 @@ html, body, #musicAppRoot {
   width: 100%;
   font-family: Circular,Helvetica,Arial,sans-serif;
   letter-spacing: 2px;
-  background-color: $black;
-  background: linear-gradient(180deg, $black, $white);
+
+  >* {
+    background: linear-gradient(180deg, $black, $white);
+    background-color: $black;
+  }
 }
 
 .musicApp {
