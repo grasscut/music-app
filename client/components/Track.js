@@ -10,9 +10,17 @@ class Track extends Component {
         this.toggleInfoModalOpen = this.toggleInfoModalOpen.bind(this);
     }
 
+    /**
+     * Chooses the smallest image that is larger than 150px
+     *
+     * @param images Array of album images of different sizes
+     */
     chooseAlbumImage(images) {
         return images.reduce((prev, curr) => {
-            return curr.height >= 150 && curr.height < prev.height ? curr : prev;
+            const currIsLargeEnough = curr.height >= 150,
+                currIsSmallerThanPrev = curr.height < prev.height;
+
+            return currIsLargeEnough && currIsSmallerThanPrev ? curr : prev;
         });
     }
 
