@@ -3,41 +3,38 @@ import PropTypes from 'prop-types';
 import TrackInfoModal from './TrackInfoModal';
 
 class Track extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { infoModalOpen: false };
-        this.toggleInfoModalOpen = this.toggleInfoModalOpen.bind(this);
-    }
-
-    chooseAlbumImage(images) {
-        return images.reduce((prev, curr) => {
-            return curr.height >= 150 && curr.height < prev.height ? curr : prev;
-        });
-    }
+    state = { infoModalOpen: false }
 
     toggleInfoModalOpen() {
         this.setState({ infoModalOpen: !this.state.infoModalOpen });
     }
+    
+    
+    get track() {
+        return this.props.track;
+    }
+    
+    get albumImage() {
+        var largeEnoughImages = this.track.album.images.filter((image) => image.height >= 150);
+        largeEnoughImages.sort((image, other) => image.height - other.height); // sorting in-place is stuuupid, but that's the only sort() function JS has
+        return largeEnoughImages[0];
+    }
+    
 
     render() {
-        const { track } = this.props,
-            { infoModalOpen } = this.state,
-            albumImage = this.chooseAlbumImage(track.album.images);
-
         return (
             <div>
-                <div className="track" onClick={this.toggleInfoModalOpen}>
-                    <img src={albumImage && albumImage.url} height="150px" />
+                <div className="track" onClick={this.toggleInfoModalOpen.bind(this)}>
+                    <img src={this.albumImage && albumImage.url} height="150px" />
                     <div className="track__label">
-                        {track.name}
+                        {this.track.name}
                     </div>
                 </div>
                 <TrackInfoModal
-                    onClose={this.toggleInfoModalOpen}
-                    isOpen={infoModalOpen}
-                    track={track}
-                    albumImage={albumImage} />
+                    onClose={this.toggleInfoModalOpen.bind(this)}
+                    isOpen={this.state.infoModalOpen}
+                    track={this.track}
+                    albumImage={this.albumImage} />
             </div>
         );
     }
