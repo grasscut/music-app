@@ -4,18 +4,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Switch, Route, IndexRoute } from 'react-router-dom';
 import { createHashHistory } from 'history';
-// import { syncHistory, routeReducer }     from 'react-router-redux';
 import thunk from 'redux-thunk';
 import './scss/main.scss';
 import musicApp from './reducers';
 import App from './containers/AppContainer';
 
-// Sync dispatched route actions to the history
-//const reduxRouterMiddleware = syncHistory(hashHistory),
-const createStoreWithMiddleware = applyMiddleware(
-        thunk,
-        //reduxRouterMiddleware
-    )(createStore),
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore),
     store = createStoreWithMiddleware(musicApp),
     history = createHashHistory();
 

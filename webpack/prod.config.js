@@ -12,7 +12,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
-        publicPath: '/',
+        publicPath: process.env.ASSET_PATH,
     },
     module: {
         rules: [
