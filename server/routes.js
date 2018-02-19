@@ -8,7 +8,9 @@ const router = new express.Router();
 // configure the express server
 const CLIENT_ID = '90c2151c1fcd40f7ba74d2518f93aebd';
 const CLIENT_SECRET = 'b5e45b9369d445df82d09feb220d07de';
-const REDIRECT_URI = 'http://localhost:3000/callback';
+const REDIRECT_URI = process.env.NODE_ENV === 'production' ?
+    'https://olga-orlova-music-app.herokuapp.com/callback' :
+    'http://localhost:3000/callback';
 const STATE_KEY = 'spotify_auth_state';
 // your application requests authorization
 const scopes = ['user-read-private', 'user-read-email', 'user-library-read', 'user-library-modify'];
