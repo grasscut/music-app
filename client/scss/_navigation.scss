@@ -1,0 +1,22 @@
+.navigation {
+  height: 80px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: $black08;
+
+  &__title {
+    color: $white;
+    line-height: 50px;
+    font-size: 26px;
+  }
+
+  &__userProfile {
+    float: right;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 2px solid $white;
+  }
+}

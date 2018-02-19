@@ -1,0 +1,47 @@
+@import "constants";
+
+@import "modal";
+@import "track";
+@import "navigation";
+@import "trackinfo";
+
+html, body, #musicAppRoot {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.musicApp {
+  min-height: 100%;
+  background-color: $black;
+  background: linear-gradient(180deg, $black, $white);
+  font-family: Circular,Helvetica,Arial,sans-serif;
+  letter-spacing: 2px;
+
+  &--unauthorized {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__loginButton {
+    max-width: 250px;
+    border-radius: 500px;
+    padding: 20px 45px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: $white;
+    background-color: $green;
+
+    @include button;
+  }
+
+  &__tracksList {
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 95px;
+  }
+}

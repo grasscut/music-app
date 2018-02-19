@@ -1,0 +1,29 @@
+.trackInfo {
+  display: flex;
+
+  &__albumImage {
+    flex: 0 0 150px;
+  }
+}
+
+.trackDescription {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    flex: 1 1 100%;
+  }
+
+  &__deleteButton {
+    @include button;
+
+    background-color: $white;
+    color: $black;
+    border: 2px solid $red;
+    padding: 10px 15px;
+    border-radius: 50px;
+    align-self: self-end;
+    flex: 0 0 auto;
+  }
+}
