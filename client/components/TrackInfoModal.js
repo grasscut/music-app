@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from './Modal';
 import TrackInfoContainer from '../containers/TrackInfoContainer';
 
-const TrackInfoModal = (props) => {
-    const { onClose, isOpen, track, albumImage } = props;
-
+const TrackInfoModal = ({ onClose, isOpen, track, albumImage }) => {
     if (isOpen) {
         const title = track.name,
             content = <TrackInfoContainer track={track} albumImage={albumImage} />;
