@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default ({ onClose, messageTitle, messageContent }) => {
+const Modal = ({ onClose, messageTitle, messageContent }) => {
     return (
         <div className="modal">
             <div className="modalMessage">
@@ -22,3 +22,5 @@ Modal.propTypes = {
     messageTitle: PropTypes.string,
     messageContent: PropTypes.node
 };
+
+export default Modal;
