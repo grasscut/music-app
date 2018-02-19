@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginButton from './LoginButton';
 
-const Error = () => {
+export default () => {
     return (
         <div className="error">
             <div className="errorMessage">
@@ -19,5 +19,3 @@ const Error = () => {
         </div>
     );
 };
-
-export default Error;

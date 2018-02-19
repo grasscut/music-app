@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Track from "./Track";
 
-const Navigation = (props) => {
-    const { user } = props;
-
+const Navigation = ({ user }) => {
     return (
         <div className="navigation">
             <span className="navigation__title">

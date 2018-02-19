@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TrackInfo = (props) => {
-    const { track, albumImage, removeTrack } = props;
-
+const TrackInfo = ({ track, albumImage, removeTrack }) => {
     return (
         <div className="trackInfo">
             <div className="trackDescription">
