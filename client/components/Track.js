@@ -21,23 +21,21 @@ class Track extends Component {
     }
     
 
-    render() {
-        return (
-            <div>
-                <div className="track" onClick={this.toggleInfoModalOpen.bind(this)}>
-                    <img src={this.albumImage && albumImage.url} height="150px" />
-                    <div className="track__label">
-                        {this.track.name}
-                    </div>
+    render = () => (
+        <div>
+            <div className="track" onClick={this.toggleInfoModalOpen.bind(this)}>
+                <img src={this.albumImage && albumImage.url} height="150px" />
+                <div className="track__label">
+                    {this.track.name}
                 </div>
-                <TrackInfoModal
-                    onClose={this.toggleInfoModalOpen.bind(this)}
-                    isOpen={this.state.infoModalOpen}
-                    track={this.track}
-                    albumImage={this.albumImage} />
             </div>
-        );
-    }
+            <TrackInfoModal
+                onClose={this.toggleInfoModalOpen.bind(this)}
+                isOpen={this.state.infoModalOpen}
+                track={this.track}
+                albumImage={this.albumImage} />
+        </div>
+    );
 }
 
 Track.propTypes = {
