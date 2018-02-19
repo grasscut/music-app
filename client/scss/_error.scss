@@ -1,0 +1,42 @@
+.error {
+  min-height: 100%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  >* {
+    flex: 0 0 auto;
+  }
+}
+
+.errorMessage {
+  &__textBlock {
+    &--large {
+      padding: 20px 45px;
+      font-size: 50px;
+    }
+
+    &--medium {
+      padding: 12px 27px;
+      font-size: 30px;
+      position: relative;
+      left: 50px;
+      top: -10px;
+    }
+
+    &--green {
+      background-color: $green;
+      color: $white;
+    }
+
+    &--white {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  &__tryAgain {
+    margin-top: 50px;
+  }
+}

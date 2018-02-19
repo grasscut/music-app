@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Navigation from './Navigation';
 import TracksList from '../containers/TracksList';
+import LoginButton from './LoginButton';
 
 class App extends Component {
     componentWillMount() {
@@ -23,9 +24,7 @@ class App extends Component {
         } else {
             return (
                 <div className="musicApp musicApp--unauthorized">
-                    <a className="musicApp__loginButton" href="/login">
-                        Login with Spotify
-                    </a>
+                   <LoginButton/>
                 </div>
             );
         }

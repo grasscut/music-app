@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import './scss/main.scss';
 import musicApp from './reducers';
 import App from './containers/AppContainer';
+import Error from './components/Error';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore),
     store = createStoreWithMiddleware(musicApp),
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Router history={history}>
             <Switch>
                 <Route path="/user/:accessToken/:refreshToken" component={App} />
+                <Route path="/error" component={Error} />
                 <Route path="/" component={App} />
             </Switch>
         </Router>

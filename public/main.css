@@ -1,6 +1,22 @@
 /* Colors */
 /* Fonts */
 /* UI */
+.loginButton {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  max-width: 250px;
+  border-radius: 500px;
+  padding: 20px 45px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #1ed760; }
+  .loginButton:hover {
+    background-color: #4bdf80; }
+
 .modal {
   background-color: rgba(25, 20, 20, 0.8);
   position: fixed;
@@ -20,6 +36,7 @@
   background-color: white;
   position: relative;
   max-width: 690px;
+  min-width: 360px;
   box-sizing: border-box; }
   .modalMessage__title {
     border-bottom: 2px solid #191414;
@@ -58,7 +75,8 @@
   width: 100%;
   position: fixed;
   z-index: 1;
-  background-color: rgba(25, 20, 20, 0.8); }
+  background-color: rgba(25, 20, 20, 0.8);
+  cursor: default; }
   .navigation__title {
     color: white;
     line-height: 50px;
@@ -79,7 +97,8 @@
   display: flex;
   flex-direction: column; }
   .trackDescription__text {
-    flex: 1 1 100%; }
+    flex: 1 1 100%;
+    margin-bottom: 30px; }
   .trackDescription__deleteButton {
     text-decoration: none;
     text-transform: uppercase;
@@ -89,41 +108,71 @@
     background-color: white;
     color: #191414;
     border: 2px solid #f8523c;
-    padding: 10px 15px;
+    padding: 8px 18px;
     border-radius: 50px;
+    transition: background-color .2s ease-in-out;
     align-self: self-end;
     flex: 0 0 auto; }
+    .trackDescription__deleteButton:hover {
+      background-color: #ecebe8; }
+
+@media (max-width: 900px) {
+  .trackInfo {
+    flex-direction: column; }
+    .trackInfo__albumImage {
+      order: 1; }
+  .trackDescription {
+    flex: 1 1 100%;
+    order: 2; } }
+
+.error {
+  min-height: 100%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .error > * {
+    flex: 0 0 auto; }
+
+.errorMessage__textBlock--large {
+  padding: 20px 45px;
+  font-size: 50px; }
+
+.errorMessage__textBlock--medium {
+  padding: 12px 27px;
+  font-size: 30px;
+  position: relative;
+  left: 50px;
+  top: -10px; }
+
+.errorMessage__textBlock--green {
+  background-color: #1ed760;
+  color: white; }
+
+.errorMessage__textBlock--white {
+  background-color: white;
+  color: #191414; }
+
+.errorMessage__tryAgain {
+  margin-top: 50px; }
 
 html, body, #musicAppRoot {
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  font-family: Circular,Helvetica,Arial,sans-serif;
+  letter-spacing: 2px;
+  background-color: #191414;
+  background: linear-gradient(180deg, #191414, white); }
 
 .musicApp {
-  min-height: 100%;
-  background-color: #191414;
-  background: linear-gradient(180deg, #191414, white);
-  font-family: Circular,Helvetica,Arial,sans-serif;
-  letter-spacing: 2px; }
+  min-height: 100%; }
   .musicApp--unauthorized {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; }
-  .musicApp__loginButton {
-    max-width: 250px;
-    border-radius: 500px;
-    padding: 20px 45px;
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
-    background-color: #1ed760;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    white-space: nowrap;
-    cursor: pointer; }
   .musicApp__tracksList {
     display: flex;
     flex-flow: wrap;
