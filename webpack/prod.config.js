@@ -10,7 +10,7 @@ module.exports = {
         path.join(__dirname, '../client/index'),
     ],
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, '../public'),
         filename: 'bundle.js',
         publicPath: process.env.ASSET_PATH,
     },
@@ -44,6 +44,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
+                ASSET_PATH: '../public'
             },
         }),
         new webpack.HotModuleReplacementPlugin(),
