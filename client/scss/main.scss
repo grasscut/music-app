@@ -5,6 +5,7 @@
 @import "track";
 @import "navigation";
 @import "trackinfo";
+@import "deleted-track";
 @import "error";
 
 html, body, #musicAppRoot {
@@ -35,5 +36,18 @@ html, body, #musicAppRoot {
     display: flex;
     flex-flow: wrap;
     padding-top: 95px;
+  }
+
+  &__deletedTracksList {
+    padding-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .musicApp__tracksList, .musicApp__deletedTracksList {
+    padding-top: 145px;
   }
 }

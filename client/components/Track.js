@@ -13,7 +13,7 @@ class Track extends Component {
     /**
      * Chooses the smallest image that is larger than 150px
      *
-     * @param images Array of album images of different sizes
+     * @param {array} images Array of album images of different sizes
      */
     chooseAlbumImage(images) {
         return images.reduce((prev, curr) => {

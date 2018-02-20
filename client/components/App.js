@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import cookie from 'react-cookie';
 import Navigation from '../containers/NavigationContainer';
 import TracksList from '../containers/TracksListContainer';
+import DeletedTracksList from '../containers/DeletedTracksListContainer';
 import LoginButton from './LoginButton';
+import Error from './Error';
 
 class App extends Component {
     componentWillMount() {
-        const { match, updateUserAuthentication } = this.props;
+        const { updateUserAuthentication } = this.props,
+            accessToken = cookie.load('access_token');
 
-        updateUserAuthentication(match);
+        updateUserAuthentication(accessToken);
+
     }
 
     render() {
@@ -17,15 +22,16 @@ class App extends Component {
 
         if (loggedIn) {
             return (
-                <div className="musicApp">
-                    <Navigation />
-                    <BrowserRouter>
+                <HashRouter>
+                    <div className="musicApp">
+                        <Navigation />
                         <Switch>
-                            <Route path="/deleted" component={TracksList} />
-                            <Route path="/" component={TracksList} />
+                            <Route path="/deleted" component={DeletedTracksList} />
+                            <Route path="/saved_tracks" component={TracksList} />
+                            <Route path="/error" component={Error} />
                         </Switch>
-                    </BrowserRouter>
-                </div>
+                    </div>
+                </HashRouter>
             );
         } else {
             return (
@@ -39,8 +45,7 @@ class App extends Component {
 
 App.propTypes = {
     updateUserAuthentication: PropTypes.func.isRequired,
-    loggedIn: PropTypes.bool.isRequired,
-    match: PropTypes.object
+    loggedIn: PropTypes.bool.isRequired
 };
 
 export default App;

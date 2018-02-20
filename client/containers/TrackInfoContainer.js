@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { removeTrack } from '../actions/tracks';
+import { deleteTrack } from '../actions/tracks';
 import TrackInfo from '../components/TrackInfo';
 
 const mapDispatchToProps = dispatch => {
     return {
-        removeTrack: id => dispatch(removeTrack(id))
+        deleteTrack: id => dispatch(deleteTrack(id))
     };
 };
 

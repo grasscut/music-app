@@ -11,11 +11,7 @@ const TracksList = ({ tracks, loadTracks }) => {
             loadMore={loadTracks}
             hasMore = {true}>
 
-            {tracks.map(track => {
-                return (
-                    <Track key={track.id} track={track} />
-                );
-            })}
+            {tracks.map(track => <Track key={track.id} track={track} />)}
         </InfiniteScroll>
     );
 };

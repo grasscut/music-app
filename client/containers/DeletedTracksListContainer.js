@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loadTracks } from '../actions/tracks';
-import TracksList from '../components/TracksList';
+import { addTrack } from '../actions/tracks';
+import DeletedTracksList from '../components/DeletedTracksList';
 
 const mapStateToProps = state => {
     return {
-        tracks: state.tracks.allTracks
+        tracks: state.tracks.recentlyDeletedTracks
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadTracks: () => dispatch(loadTracks)
+        addTrack: track => dispatch(addTrack(track))
     };
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TracksList);
+)(DeletedTracksList);

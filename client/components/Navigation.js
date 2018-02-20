@@ -6,7 +6,7 @@ const Navigation = ({ user }) => {
     return (
         <div className="navigation">
             <div className="navigation__links">
-                <NavLink to='/'>Your saved tracks</NavLink>
+                <NavLink to='/saved_tracks'>Your saved tracks</NavLink>
                 <NavLink to='/deleted'>Recently deleted</NavLink>
             </div>
             <div className="navigation__userProfile">

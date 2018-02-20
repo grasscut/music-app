@@ -58,8 +58,8 @@ router.get('/callback', (req, res) => {
             spotifyApi.setAccessToken(access_token);
             spotifyApi.setRefreshToken(refresh_token);
 
-            // we can also pass the token to the browser to make requests from there
-            res.redirect(`/#/user/${access_token}/${refresh_token}`);
+            res.cookie('access_token', access_token);
+            res.redirect('/#/saved_tracks');
         }).catch(err => {
             res.redirect('/#/error');
         });

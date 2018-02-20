@@ -86,12 +86,22 @@
       font-size: 18px;
       text-decoration: none;
       margin-right: 30px; }
+    .navigation__links > .active {
+      color: #1ed760; }
   .navigation__userProfile {
     flex: 0 0 auto;
+    align-self: flex-start;
     float: right;
     overflow: hidden;
     border-radius: 50px;
     border: 2px solid white; }
+
+@media (max-width: 500px) {
+  .navigation {
+    height: 130px; }
+    .navigation__links {
+      display: flex;
+      flex-direction: column; } }
 
 .trackInfo {
   display: flex; }
@@ -130,6 +140,30 @@
   .trackDescription {
     flex: 1 1 100%;
     order: 2; } }
+
+.deletedTrack {
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; }
+  .deletedTrack:nth-child(even) {
+    background-color: white; }
+  .deletedTrack:nth-child(odd) {
+    background-color: #1ed760; }
+  .deletedTrack__restoreButton {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 4px 9px;
+    color: #191414;
+    border: 2px solid #191414;
+    font-size: 14px;
+    margin-left: 30px; }
+    .deletedTrack__restoreButton:hover {
+      background-color: #ecebe8; }
 
 .error {
   min-height: 100%;
@@ -184,3 +218,12 @@ html, body, #musicAppRoot {
     display: flex;
     flex-flow: wrap;
     padding-top: 95px; }
+  .musicApp__deletedTracksList {
+    padding-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+@media (max-width: 500px) {
+  .musicApp__tracksList, .musicApp__deletedTracksList {
+    padding-top: 145px; } }

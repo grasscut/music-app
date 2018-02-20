@@ -13,17 +13,11 @@ const setUserData = response => {
     };
 };
 
-export const authenticateUser = match => {
+export const authenticateUser = accessToken => {
     return dispatch => {
-        const accessToken = match.params && match.params.accessToken;
-
         if (accessToken) {
             spotifyWebApi.setAccessToken(accessToken);
-
-            spotifyWebApi.getMe()
-                .then(response => {
-                    dispatch(setUserData(response));
-                })
+            spotifyWebApi.getMe().then(response =>  dispatch(setUserData(response)));
         }
 
         dispatch({

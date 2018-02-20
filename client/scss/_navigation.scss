@@ -19,13 +19,29 @@
       text-decoration: none;
       margin-right: 30px;
     }
+
+    > .active {
+      color: $green;
+    }
   }
 
   &__userProfile {
     flex: 0 0 auto;
+    align-self: flex-start;
     float: right;
     overflow: hidden;
     border-radius: 50px;
     border: 2px solid $white;
+  }
+}
+
+@media (max-width: 500px) {
+  .navigation {
+    height: 130px;
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

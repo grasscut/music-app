@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TrackInfo = ({ track, albumImage, removeTrack }) => {
+const TrackInfo = ({ track, albumImage, deleteTrack }) => {
     return (
         <div className="trackInfo">
             <div className="trackDescription">
@@ -9,7 +9,7 @@ const TrackInfo = ({ track, albumImage, removeTrack }) => {
                     From "{track.album.name}"<br/>
                     By {track.artists.map(artist => artist.name).concat(' ')}
                 </div>
-                <a className="trackDescription__deleteButton" onClick={removeTrack.bind(this, track.id)}>
+                <a className="trackDescription__deleteButton" onClick={deleteTrack.bind(this, track)}>
                     Delete this track <span>💔</span>
                 </a>
             </div>
@@ -23,7 +23,7 @@ const TrackInfo = ({ track, albumImage, removeTrack }) => {
 TrackInfo.propTypes = {
     track: PropTypes.object.isRequired,
     albumImage: PropTypes.object,
-    removeTrack: PropTypes.func.isRequired
+    deleteTrack: PropTypes.func.isRequired
 };
 
 export default TrackInfo;

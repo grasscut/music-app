@@ -8,11 +8,10 @@ export default function albums(state = initialState, action) {
         case 'LOAD_TRACKS':
             return {
                 ...state,
-                allTracks: state.allTracks.concat(action.allTracks)
+                allTracks: action.reset ? action.allTracks : state.allTracks.concat(action.allTracks)
             };
         case 'REMOVE_TRACK':
-            const removedTrack = state.find(track => track.id === action.id),
-                removedTrackIndex = state.findIndex(removedTrack);
+            const removedTrackIndex = state.allTracks.findIndex(track => track.id === action.track.id);
 
             return {
                 ...state,
@@ -22,7 +21,17 @@ export default function albums(state = initialState, action) {
                 ],
                 recentlyDeletedTracks: [
                     ...state.recentlyDeletedTracks,
-                    removedTrack
+                    action.track
+                ]
+            };
+        case 'ADD_TRACK':
+            const addedTrackIndex = state.recentlyDeletedTracks.findIndex(track => track.id === action.track.id);
+
+            return {
+                ...state,
+                recentlyDeletedTracks: [
+                    ...state.recentlyDeletedTracks.slice(0, addedTrackIndex),
+                    ...state.recentlyDeletedTracks.slice(addedTrackIndex + 1)
                 ]
             };
         default:
