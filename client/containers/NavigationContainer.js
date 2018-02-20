@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 
 const mapStateToProps = state => {
@@ -7,7 +8,9 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(
-    mapStateToProps,
-    null
-)(Navigation);
+export default withRouter(
+    connect(
+        mapStateToProps,
+        null
+    )(Navigation)
+);
