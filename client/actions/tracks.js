@@ -15,7 +15,7 @@ export const loadTracks = dispatch => {
 
                 dispatch({
                     type: 'LOAD_TRACKS',
-                    tracks
+                    allTracks: tracks
                 });
             });
     }

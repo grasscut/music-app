@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Navigation from './Navigation';
-import TracksList from '../containers/TracksList';
+import Navigation from '../containers/NavigationContainer';
+import TracksList from '../containers/TracksListContainer';
 import LoginButton from './LoginButton';
 
 class App extends Component {
@@ -12,32 +13,34 @@ class App extends Component {
     }
 
     render() {
-        const { loggedIn, user } = this.props;
+        const { loggedIn } = this.props;
 
         if (loggedIn) {
             return (
                 <div className="musicApp">
-                    <Navigation user={user} />
-                    <TracksList />
+                    <Navigation />
+                    <BrowserRouter>
+                        <Switch>
+                            <Route path="/deleted" component={TracksList} />
+                            <Route path="/" component={TracksList} />
+                        </Switch>
+                    </BrowserRouter>
                 </div>
             );
         } else {
             return (
                 <div className="musicApp musicApp--unauthorized">
-                   <LoginButton/>
+                    <LoginButton/>
                 </div>
             );
         }
     }
-}
+};
 
 App.propTypes = {
-    match: PropTypes.object,
-    user: PropTypes.object,
-    loggedIn: PropTypes.bool.isRequired,
     updateUserAuthentication: PropTypes.func.isRequired,
-    loadTracks: PropTypes.func.isRequired,
-    tracks: PropTypes.array
+    loggedIn: PropTypes.bool.isRequired,
+    match: PropTypes.object
 };
 
 export default App;

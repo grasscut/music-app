@@ -7,14 +7,22 @@
   z-index: 1;
   background-color: $black-08;
   cursor: default;
+  display: flex;
 
-  &__title {
-    color: $white;
-    line-height: 50px;
-    font-size: 26px;
+  &__links {
+    flex: 1 1 auto;
+
+    >* {
+      color: $white;
+      line-height: 50px;
+      font-size: 18px;
+      text-decoration: none;
+      margin-right: 30px;
+    }
   }
 
   &__userProfile {
+    flex: 0 0 auto;
     float: right;
     overflow: hidden;
     border-radius: 50px;

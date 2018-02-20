@@ -76,12 +76,18 @@
   position: fixed;
   z-index: 1;
   background-color: rgba(25, 20, 20, 0.8);
-  cursor: default; }
-  .navigation__title {
-    color: white;
-    line-height: 50px;
-    font-size: 26px; }
+  cursor: default;
+  display: flex; }
+  .navigation__links {
+    flex: 1 1 auto; }
+    .navigation__links > * {
+      color: white;
+      line-height: 50px;
+      font-size: 18px;
+      text-decoration: none;
+      margin-right: 30px; }
   .navigation__userProfile {
+    flex: 0 0 auto;
     float: right;
     overflow: hidden;
     border-radius: 50px;

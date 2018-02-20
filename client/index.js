@@ -7,8 +7,8 @@ import { createHashHistory } from 'history';
 import thunk from 'redux-thunk';
 import './scss/main.scss';
 import musicApp from './reducers';
-import App from './containers/AppContainer';
 import Error from './components/Error';
+import AppContainer from './containers/AppContainer';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore),
     store = createStoreWithMiddleware(musicApp),
@@ -18,9 +18,9 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <Switch>
-                <Route path="/user/:accessToken/:refreshToken" component={App} />
+                <Route path="/user/:accessToken/:refreshToken" component={AppContainer} />
                 <Route path="/error" component={Error} />
-                <Route path="/" component={App} />
+                <Route path="/" component={AppContainer} />
             </Switch>
         </Router>
     </Provider>,

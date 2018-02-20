@@ -1,14 +1,30 @@
-export default function albums(state = [], action) {
+const initialState = {
+    allTracks: [],
+    recentlyDeletedTracks: []
+};
+
+export default function albums(state = initialState, action) {
     switch (action.type) {
         case 'LOAD_TRACKS':
-            return state.concat(action.tracks);
+            return {
+                ...state,
+                allTracks: state.allTracks.concat(action.allTracks)
+            };
         case 'REMOVE_TRACK':
-            const removedTrackIndex = state.findIndex(track => track.id === action.id);
+            const removedTrack = state.find(track => track.id === action.id),
+                removedTrackIndex = state.findIndex(removedTrack);
 
-            return [
-                ...state.slice(0, removedTrackIndex),
-                ...state.slice(removedTrackIndex + 1)
-            ];
+            return {
+                ...state,
+                allTracks: [
+                    ...state.allTracks.slice(0, removedTrackIndex),
+                    ...state.allTracks.slice(removedTrackIndex + 1)
+                ],
+                recentlyDeletedTracks: [
+                    ...state.recentlyDeletedTracks,
+                    removedTrack
+                ]
+            };
         default:
             return state;
     }
