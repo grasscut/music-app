@@ -5,15 +5,19 @@ import Track from './Track';
 import EmptyView from '../ui/EmptyView';
 
 const TracksList = ({ tracks, loadTracks }) => {
-    return (
-        <InfiniteScroll
-            className="musicApp__tracksList"
-            pageStart={0}
-            loadMore={loadTracks}
-            hasMore = {true}>
-            {tracks.map(track => <Track key={track.id} track={track} />) || <EmptyView />}
-        </InfiniteScroll>
-    );
+    if (tracks.length) {
+        return (
+            <InfiniteScroll
+                className="musicApp__tracksList"
+                pageStart={0}
+                loadMore={loadTracks}
+                hasMore = {true}>
+                {tracks.map(track => <Track key={track.id} track={track} />)}
+            </InfiniteScroll>
+        );
+    } else {
+        return <EmptyView />;
+    }
 };
 
 TracksList.propTypes = {
