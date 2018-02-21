@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { deleteTrack } from '../actions/tracks';
-import TrackInfo from '../components/TrackInfo';
+import TrackInfo from '../components/all_tracks_list/TrackInfo';
 
 const mapDispatchToProps = dispatch => {
     return {

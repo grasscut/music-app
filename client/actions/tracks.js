@@ -28,6 +28,9 @@ export const loadTracks = dispatch => {
                 allTracksLoaded = !response.next;
 
                 dispatch(setAllTracks(response));
+            })
+            .catch(error => {
+                window.location = '#/error';
             });
     }
 };
@@ -40,6 +43,9 @@ export const deleteTrack = track => {
                     type: 'REMOVE_TRACK',
                     track
                 });
+            })
+            .catch(() => {
+                window.location = '#/error';
             });
     };
 };
@@ -55,11 +61,17 @@ export const addTrack = track => {
                         allTracksLoaded = !response.next;
 
                         dispatch(setAllTracks(response, true));
+                    })
+                    .catch(() => {
+                        window.location = '#/error';
                     });
                 dispatch({
                     type: 'ADD_TRACK',
                     track
                 });
-        });
+            })
+            .catch(() => {
+                window.location = '#/error';
+            });
     };
 };

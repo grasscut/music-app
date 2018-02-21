@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateUserAuthentication: match => dispatch(authenticateUser(match))
+        updateUserAuthentication: accessToken => dispatch(authenticateUser(accessToken))
     };
 };
 

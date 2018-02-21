@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
-import TrackInfoContainer from '../containers/TrackInfoContainer';
+import Modal from '../ui/Modal';
+import TrackInfoContainer from '../../containers/TrackInfoContainer';
 
 const TrackInfoModal = ({ onClose, isOpen, track, albumImage }) => {
     if (isOpen) {

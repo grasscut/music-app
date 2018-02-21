@@ -5,7 +5,7 @@ import cookie from 'react-cookie';
 import Navigation from '../containers/NavigationContainer';
 import TracksList from '../containers/TracksListContainer';
 import DeletedTracksList from '../containers/DeletedTracksListContainer';
-import LoginButton from './LoginButton';
+import LoginButton from './ui/LoginButton';
 
 class App extends Component {
     componentWillMount() {

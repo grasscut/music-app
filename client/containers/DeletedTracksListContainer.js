@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addTrack } from '../actions/tracks';
-import DeletedTracksList from '../components/DeletedTracksList';
+import DeletedTracksList from '../components/deleted_tracks_list/DeletedTracksList';
 
 const mapStateToProps = state => {
     return {

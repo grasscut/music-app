@@ -17,7 +17,12 @@ export const authenticateUser = accessToken => {
     return dispatch => {
         if (accessToken) {
             spotifyWebApi.setAccessToken(accessToken);
-            spotifyWebApi.getMe().then(response =>  dispatch(setUserData(response)));
+
+            spotifyWebApi.getMe()
+                .then(response =>  dispatch(setUserData(response)))
+                .catch(() => {
+                    window.location = '#/error';
+                });
         }
 
         dispatch({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
-import Track from '../components/Track';
+import Track from './Track';
 
 const TracksList = ({ tracks, loadTracks }) => {
     return (
