@@ -8,12 +8,12 @@ import DeletedTracksList from '../containers/DeletedTracksListContainer';
 import LoginButton from './ui/LoginButton';
 
 class App extends Component {
-    componentWillMount() {
-        const { updateUserAuthentication } = this.props,
-            accessToken = cookie.load('access_token');
+    constructor(props) {
+        super(props);
 
-        updateUserAuthentication(accessToken);
+        const accessToken = cookie.load('access_token');
 
+        props.updateUserAuthentication(accessToken);
     }
 
     render() {
@@ -40,7 +40,7 @@ class App extends Component {
             );
         }
     }
-};
+}
 
 App.propTypes = {
     updateUserAuthentication: PropTypes.func.isRequired,
