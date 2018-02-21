@@ -8,9 +8,7 @@ class TracksList extends Component {
     constructor(props) {
         super(props);
 
-        // load the first batch of tracks - the rest will be loaded if and when user starts scrolling
         this.state = { loading: true };
-        props.loadTracks();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -29,7 +27,6 @@ class TracksList extends Component {
             return (
                 <InfiniteScroll
                     className="musicApp__tracksList"
-                    initialLoad={false}
                     loadMore={loadTracks}
                     hasMore = {true}>
                     {tracks.map(track => <Track key={track.id} track={track} />)}
