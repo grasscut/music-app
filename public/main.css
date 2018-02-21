@@ -210,6 +210,7 @@
   margin-top: 50px; }
 
 .emptyView {
+  overflow-x: hidden;
   flex: 1 1 100%;
   display: flex;
   flex-direction: column;
@@ -217,6 +218,10 @@
   justify-content: center; }
   .emptyView__giphy {
     width: 450px; }
+
+@media (max-width: 500px) {
+  .emptyView__giphy {
+    width: auto; } }
 
 html, body, #musicAppRoot {
   margin: 0;
