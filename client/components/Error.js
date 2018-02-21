@@ -5,10 +5,10 @@ export default () => {
     return (
         <div className="error">
             <div className="errorMessage">
-                <div className="errorMessage__textBlock errorMessage__textBlock--white errorMessage__textBlock--large">
+                <div className="textBlock textBlock--white textBlock--large">
                     OH NO! <span>😱</span>
                 </div>
-                <div className="errorMessage__textBlock errorMessage__textBlock--green errorMessage__textBlock--medium">
+                <div className="textBlock textBlock--green textBlock--medium">
                     An error has occurred
                 </div>
                 <div className="errorMessage__tryAgain">

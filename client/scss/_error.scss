@@ -11,31 +11,6 @@
 }
 
 .errorMessage {
-  &__textBlock {
-    &--large {
-      padding: 20px 45px;
-      font-size: 50px;
-    }
-
-    &--medium {
-      padding: 12px 27px;
-      font-size: 30px;
-      position: relative;
-      left: 50px;
-      top: -10px;
-    }
-
-    &--green {
-      background-color: $green;
-      color: $white;
-    }
-
-    &--white {
-      background-color: $white;
-      color: $black;
-    }
-  }
-
   &__tryAgain {
     margin-top: 50px;
   }

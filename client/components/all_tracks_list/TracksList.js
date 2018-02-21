@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 import Track from './Track';
+import EmptyView from '../ui/EmptyView';
 
 const TracksList = ({ tracks, loadTracks }) => {
     return (
@@ -10,8 +11,7 @@ const TracksList = ({ tracks, loadTracks }) => {
             pageStart={0}
             loadMore={loadTracks}
             hasMore = {true}>
-
-            {tracks.map(track => <Track key={track.id} track={track} />)}
+            {tracks.map(track => <Track key={track.id} track={track} />) || <EmptyView />}
         </InfiniteScroll>
     );
 };

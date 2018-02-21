@@ -1,0 +1,11 @@
+.emptyView {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__giphy {
+    width: 450px;
+  }
+}

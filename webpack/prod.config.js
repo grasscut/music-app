@@ -16,7 +16,17 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.svg$/, use: ['raw-loader']},
+            {
+                test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name]-[hash:8].[ext]'
+                        },
+                    }
+                ]
+            },
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({

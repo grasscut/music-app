@@ -1,12 +1,14 @@
 @import "constants";
 
 @import "login-button";
+@import "text-block";
 @import "modal";
 @import "track";
 @import "navigation";
 @import "trackinfo";
 @import "deleted-track";
 @import "error";
+@import "empty-view";
 
 html, body, #musicAppRoot {
   margin: 0;
@@ -24,6 +26,8 @@ html, body, #musicAppRoot {
 
 .musicApp {
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
 
   &--unauthorized {
     display: flex;
@@ -33,12 +37,14 @@ html, body, #musicAppRoot {
   }
 
   &__tracksList {
+    flex: 1 1 100%;
     display: flex;
     flex-flow: wrap;
     padding-top: 95px;
   }
 
   &__deletedTracksList {
+    flex: 1 1 100%;
     padding-top: 95px;
     display: flex;
     flex-direction: column;

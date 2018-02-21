@@ -18,6 +18,25 @@
   .loginButton:hover {
     background-color: #4bdf80; }
 
+.textBlock--large {
+  padding: 20px 45px;
+  font-size: 50px; }
+
+.textBlock--medium {
+  padding: 12px 27px;
+  font-size: 30px;
+  position: relative;
+  left: 50px;
+  top: -10px; }
+
+.textBlock--green {
+  background-color: #1ed760;
+  color: white; }
+
+.textBlock--white {
+  background-color: white;
+  color: #191414; }
+
 .modal {
   background-color: rgba(25, 20, 20, 0.8);
   position: fixed;
@@ -187,27 +206,17 @@
   .error > * {
     flex: 0 0 auto; }
 
-.errorMessage__textBlock--large {
-  padding: 20px 45px;
-  font-size: 50px; }
-
-.errorMessage__textBlock--medium {
-  padding: 12px 27px;
-  font-size: 30px;
-  position: relative;
-  left: 50px;
-  top: -10px; }
-
-.errorMessage__textBlock--green {
-  background-color: #1ed760;
-  color: white; }
-
-.errorMessage__textBlock--white {
-  background-color: white;
-  color: #191414; }
-
 .errorMessage__tryAgain {
   margin-top: 50px; }
+
+.emptyView {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .emptyView__giphy {
+    width: 450px; }
 
 html, body, #musicAppRoot {
   margin: 0;
@@ -221,17 +230,21 @@ html, body, #musicAppRoot {
     background-color: #191414; }
 
 .musicApp {
-  min-height: 100%; }
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; }
   .musicApp--unauthorized {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; }
   .musicApp__tracksList {
+    flex: 1 1 100%;
     display: flex;
     flex-flow: wrap;
     padding-top: 95px; }
   .musicApp__deletedTracksList {
+    flex: 1 1 100%;
     padding-top: 95px;
     display: flex;
     flex-direction: column;
