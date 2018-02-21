@@ -10,4 +10,4 @@
 4. Open <code>http://localhost:3000/</code> in your browser<br/>
 5. Great success! 🎉</p>
 <h2>To do</h2>
-<p>Tests; better error handling; fix some authorization issues; add the list of saved tracks ranged by Spotify's "popularity" attribute.</p>
+<p>Tests; better error handling; add the list of saved tracks ranged by Spotify's "popularity" attribute.</p>
