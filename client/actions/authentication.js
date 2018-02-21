@@ -1,4 +1,5 @@
 import Spotify from 'spotify-web-api-js';
+import defaultUserpic from '../images/default-userpic.jpg';
 
 const spotifyWebApi = new Spotify();
 
@@ -8,7 +9,7 @@ const setUserData = response => {
         user: {
             name: response.display_name,
             email: response.email,
-            picture: response.images && response.images[0].url
+            picture: response.images.length ? response.images[0].url : defaultUserpic
         }
     };
 };
