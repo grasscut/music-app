@@ -1,6 +1,7 @@
 <h1>Showcase of using React+Redux with Node.js-based Spotify authorization</h1>
 <p>A small app that authorizes a Spotify user and calls Spotify API in order to do basic manipulations with the Saved Tracks list (view, delete & restore recently deleted tracks).</p>
 <p>Demo - https://olga-orlova-music-app.herokuapp.com</p>
+<p>The app will make more sense if you have a Spotify account with some "Saved Tracks" in your Library 😉</p>
 <h2>How to run</h2>
 <p>0. <code>git clone</code> this awesome repo<br/>
 1. <code>npm install</code><br/>
