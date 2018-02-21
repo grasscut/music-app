@@ -5,6 +5,7 @@ $black: rgba(25, 20, 20, 1);
 $black-08: rgba(25, 20, 20, .8);
 $white: rgba(255, 255, 255, 1);
 $red: rgba(248, 82, 60, 1);
+$light-red: rgba(247, 147, 134, 1);
 $sand: rgba(236, 235, 232, 1);
 
 /* Fonts */
@@ -20,4 +21,6 @@ $lines-to-show: 2;
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
+  border-radius: 500px;
+  line-height: 1;
 }

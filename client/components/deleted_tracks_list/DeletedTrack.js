@@ -8,7 +8,7 @@ const DeletedTrack = ({ track, restoreTrack }) => {
                 {track.name}
             </div>
             <a className="deletedTrack__restoreButton"onClick={restoreTrack.bind(this, track)}>
-                Restore <span>❤️</span>
+                Restore
             </a>
         </div>
     );

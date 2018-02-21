@@ -10,7 +10,7 @@ const TrackInfo = ({ track, albumImage, deleteTrack }) => {
                     By {track.artists.map(artist => artist.name).concat(' ')}
                 </div>
                 <a className="trackDescription__deleteButton" onClick={deleteTrack.bind(this, track)}>
-                    Delete this track <span>💔</span>
+                    Delete this track
                 </a>
             </div>
             <div className="trackInfo__albumImage">

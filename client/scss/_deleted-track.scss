@@ -6,24 +6,39 @@
 
   &:nth-child(even) {
     background-color: $white;
+
+    & > .deletedTrack__restoreButton {
+      background-color: $green;
+      border: 2px solid $green;
+      color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $green;
+      }
+    }
   }
 
   &:nth-child(odd) {
     background-color: $green;
+
+    & > .deletedTrack__restoreButton {
+      background-color: $white;
+      border: 2px solid $white;
+      color: $black;
+
+      &:hover {
+        background-color: $green;
+        color: $white;
+      }
+    }
   }
 
   &__restoreButton {
     @include button;
 
-    border-radius: 50px;
-    padding: 4px 9px;
-    color: $black;
-    border: 2px solid $black;
-    font-size: 14px;
+    padding: 10px 40px;
+    font-size: 12px;
     margin-left: 30px;
-
-    &:hover {
-      background-color: $sand;
-    }
   }
 }
