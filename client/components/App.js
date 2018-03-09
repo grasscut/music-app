@@ -5,6 +5,7 @@ import cookie from 'react-cookie';
 import Navigation from '../containers/NavigationContainer';
 import TracksList from '../containers/TracksListContainer';
 import DeletedTracksList from '../containers/DeletedTracksListContainer';
+import PopularityPage from '../containers/PopularityPageContainer';
 import LoginButton from './ui/LoginButton';
 
 class App extends Component {
@@ -25,8 +26,9 @@ class App extends Component {
                     <div className="musicApp">
                         <Navigation />
                         <Switch>
-                            <Route path="/deleted" component={DeletedTracksList} />
+                            <Route path="/mainstream-o-meter" component={PopularityPage} />
                             <Route path="/saved_tracks" component={TracksList} />
+                            <Route path="/deleted" component={DeletedTracksList} />
                             <Redirect from="/" to="/saved_tracks" />
                         </Switch>
                     </div>

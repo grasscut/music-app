@@ -1,11 +1,9 @@
 .navigation {
-  height: 80px;
+  flex: 1 0 auto;
   padding: 15px;
   box-sizing: border-box;
   width: 100%;
-  position: fixed;
-  z-index: 1;
-  background-color: $black-08;
+  background-color: transparent;
   cursor: default;
   display: flex;
 
@@ -37,9 +35,9 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 730px) {
   .navigation {
-    height: 130px;
+    background-color: $black-08;
 
     &__links {
       display: flex;

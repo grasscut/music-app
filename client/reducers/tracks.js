@@ -1,6 +1,7 @@
 const initialState = {
     allTracks: [],
-    recentlyDeletedTracks: []
+    recentlyDeletedTracks: [],
+    allTracksLoaded: false
 };
 
 export default function albums(state = initialState, action) {
@@ -9,6 +10,11 @@ export default function albums(state = initialState, action) {
             return {
                 ...state,
                 allTracks: action.reset ? action.allTracks : state.allTracks.concat(action.allTracks)
+            };
+        case 'SET_ALL_TRACKS_LOADED':
+            return {
+                ...state,
+                allTracksLoaded: action.payload
             };
         case 'REMOVE_TRACK':
             const removedTrackIndex = state.allTracks.findIndex(track => track.id === action.track.id);

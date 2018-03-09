@@ -25,18 +25,21 @@ class TracksList extends Component {
 
         if (tracks.length || loading) {
             return (
-                <InfiniteScroll
-                    className="musicApp__tracksList"
-                    loadMore={loadTracks}
-                    hasMore = {true}>
-                    {tracks.map(track => <Track key={track.id} track={track} />)}
-                </InfiniteScroll>
+                <div>
+                    <InfiniteScroll
+                        className="musicApp__tracksList"
+                        loadMore={loadTracks}
+                        useWindow={false}
+                        hasMore={true}>
+                        {tracks.map(track => <Track key={track.id} track={track} />)}
+                    </InfiniteScroll>
+                </div>
             );
         } else {
             return <EmptyView />;
         }
     }
-};
+}
 
 TracksList.propTypes = {
     tracks: PropTypes.array.isRequired,

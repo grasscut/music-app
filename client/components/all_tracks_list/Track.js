@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { chooseAlbumImage } from '../../helpers/tracks';
 import TrackInfoModal from './TrackInfoModal';
 
 class Track extends Component {
@@ -10,20 +11,6 @@ class Track extends Component {
         this.toggleInfoModalOpen = this.toggleInfoModalOpen.bind(this);
     }
 
-    /**
-     * Chooses the smallest image that is larger than 150px
-     *
-     * @param {array} images Array of album images of different sizes
-     */
-    chooseAlbumImage(images) {
-        return images.reduce((prev, curr) => {
-            const currIsLargeEnough = curr.height >= 150,
-                currIsSmallerThanPrev = curr.height < prev.height;
-
-            return currIsLargeEnough && currIsSmallerThanPrev ? curr : prev;
-        });
-    }
-
     toggleInfoModalOpen() {
         this.setState({ infoModalOpen: !this.state.infoModalOpen });
     }
@@ -31,7 +18,7 @@ class Track extends Component {
     render() {
         const { track } = this.props,
             { infoModalOpen } = this.state,
-            albumImage = this.chooseAlbumImage(track.album.images);
+            albumImage = chooseAlbumImage(track);
 
         return (
             <div>

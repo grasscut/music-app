@@ -20,14 +20,19 @@ html, body, #musicAppRoot {
 
   >* {
     background: linear-gradient(180deg, $black, $white);
-    background-color: $black;
+    background-color: $white;
+    background-attachment: fixed;
   }
 }
 
 .musicApp {
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+
+  >* {
+    overflow-y: scroll;
+  }
 
   &--unauthorized {
     display: flex;
@@ -36,24 +41,46 @@ html, body, #musicAppRoot {
     justify-content: center;
   }
 
+  &__popularityPage {
+    padding: 20px;
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    >* {
+      @include shadow;
+    }
+  }
+
   &__tracksList {
     flex: 1 1 100%;
     display: flex;
     flex-flow: wrap;
-    padding-top: 95px;
+    padding-top: 20px;
   }
 
   &__deletedTracksList {
     flex: 1 1 100%;
-    padding-top: 95px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
 
-@media (max-width: 500px) {
-  .musicApp__tracksList, .musicApp__deletedTracksList {
-    padding-top: 145px;
+@media (max-width: 730px) {
+  .musicApp {
+    &__popularityPage {
+      align-items: normal;
+      justify-content: normal;
+      padding: 20px 0;
+
+      &--loading {
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }

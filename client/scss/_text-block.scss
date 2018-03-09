@@ -1,4 +1,6 @@
 .textBlock {
+  @include shadow;
+
   &--large {
     padding: 20px 45px;
     font-size: 50px;
@@ -7,9 +9,17 @@
   &--medium {
     padding: 12px 27px;
     font-size: 30px;
+  }
+
+  &--shifted {
     position: relative;
     left: 50px;
     top: -10px;
+  }
+
+  &--small {
+    padding: 6px 14px;
+    font-size: 22px;
   }
 
   &--green {
@@ -21,4 +31,12 @@
     background-color: $white;
     color: $black;
   }
+}
+
+.number {
+  color: $red;
+}
+
+.boldText {
+  font-weight: 600;
 }

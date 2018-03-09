@@ -20,12 +20,23 @@ const setAllTracks = (response, reset = false) => {
     };
 };
 
+const setAllTracksLoaded = payload => {
+    return {
+        type: 'SET_ALL_TRACKS_LOADED',
+        payload
+    }
+};
+
 export const loadTracks = dispatch => {
     if (!allTracksLoaded) {
         spotifyWebApi.getMySavedTracks({ offset })
             .then(response => {
                 offset += 20;
                 allTracksLoaded = !response.next;
+
+                if (allTracksLoaded) {
+                    dispatch(setAllTracksLoaded(true));
+                }
 
                 dispatch(setAllTracks(response));
             })
@@ -54,11 +65,16 @@ export const addTrack = track => {
     return dispatch => {
         spotifyWebApi.addToMySavedTracks([track.id])
             .then(() => {
+                dispatch(setAllTracksLoaded(false));
                 offset = 0;
                 spotifyWebApi.getMySavedTracks({ offset })
                     .then(response => {
                         offset += 20;
                         allTracksLoaded = !response.next;
+
+                        if (allTracksLoaded) {
+                            dispatch(setAllTracksLoaded(true));
+                        }
 
                         dispatch(setAllTracks(response, true));
                     })

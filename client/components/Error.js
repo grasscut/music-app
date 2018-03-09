@@ -8,7 +8,7 @@ export default () => {
                 <div className="textBlock textBlock--white textBlock--large">
                     OH NO! <span>😱</span>
                 </div>
-                <div className="textBlock textBlock--green textBlock--medium">
+                <div className="textBlock textBlock--green textBlock--medium textBlock--shifted">
                     An error has occurred
                 </div>
                 <div className="errorMessage__tryAgain">

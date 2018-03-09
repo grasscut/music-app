@@ -9,6 +9,10 @@
   &__giphy {
     width: 450px;
   }
+
+  >* {
+    @include shadow;
+  }
 }
 
 @media (max-width: 500px) {

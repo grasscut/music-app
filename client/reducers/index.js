@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import authentication from './authentication';
 import tracks from './tracks';
+import popularity from './popularity';
 
 const musicApp = combineReducers({
     authentication,
-    tracks
+    tracks,
+    popularity
 });
 
 export default musicApp;
